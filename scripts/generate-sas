@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -e
+
+# If key is not specifically queried, az will do it with a warning
+key=`az storage account keys list -n kobricksaccount --query [0].value -o tsv`
+sas=`az storage container generate-sas --name maindata \
+  --account-key "$key" \
+  --account-name kobricksaccount \
+  --https-only \
+  --expiry $(date --date='next week' -I) \
+  --permissions acdlrw \
+  -o tsv
+`
+
+cat <<EOF >> .env
+export AZURE_STORAGE_ACCOUNT=kobricksaccount
+export AZURE_STORAGE_SAS_TOKEN="$sas"
+EOF
+echo $sas
