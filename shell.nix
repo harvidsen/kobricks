@@ -7,6 +7,7 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     terraform_0_15
+    azure-cli
   ];
 
   shellHook = ''

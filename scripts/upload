@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Example for uploading to a blob vi azure-cli
+# NOTE: this specifig example only works from root folder of this repository.
+# Docs for managing azure blobs: https://docs.microsoft.com/en-us/cli/azure/storage/blob?view=azure-cli-latest
+# Alternatively we can use blob direcories: https://docs.microsoft.com/en-us/cli/azure/storage/blob/directory?view=azure-cli-latest
+
+if [[ (-z $AZURE_STORAGE_ACCOUNT) || (-z $AZURE_STORAGE_SAS_TOKEN) ]]; then
+  echo "AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_SAS_TOKEN must be set!"
+  exit 1
+fi;
+
+az storage blob upload -c maindata \
+  -f ./data/no2_consumption_temperature_2020.csv \
+  -n test/no2_consumption_temperature_2020.csv

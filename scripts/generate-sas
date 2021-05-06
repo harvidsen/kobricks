@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
+# Example for creating a sas token for authenticating to a storage container
+# in a storage account. Line breaks "\" are only for readability.
+# Writes to .env for making token readily available for further use with
+# `source .env` command.
+
+
 # If key is not specifically queried, az will do it with a warning
 key=`az storage account keys list -n kobricksaccount --query [0].value -o tsv`
 sas=`az storage container generate-sas --name maindata \
