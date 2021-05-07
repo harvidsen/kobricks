@@ -1,9 +1,25 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
+provider "registry.terraform.io/databrickslabs/databricks" {
+  version     = "0.3.3"
+  constraints = "0.3.3"
+  hashes = [
+    "h1:yltyYRqfZqCpPojLgoHNK4rONfD6qY1L7rIId8Y5tv8=",
+    "zh:0d2e4a8175e804573f4b2adb779f4142a0607d3451bb0e51fbaa488a24ab9db6",
+    "zh:4a23b8a265473c511265029a6f2252c5f6f5d24bdafd684f1dcee3050bea8a03",
+    "zh:5c71d527fe6f7ef556106ff662ba12f948fea91755972cae89b88d90dccf46a1",
+    "zh:a20c841743880b1638a1a536d5bdaf657df9ba85e548a7f428cb4187365a5786",
+    "zh:a69fcde6f786dc6bf74fb786077c337b8933789b7bb862fdb244a459684a69f6",
+    "zh:ab5dcdabb67aefb611cbc27e8ba594dbcb013bf26fb243c0f987907cb1ac1676",
+    "zh:ac39957f4b839b93b12cab627aa0e8778f35ebc4360b8c66aa536b828c9259f7",
+    "zh:f9ffafe79bb7f5261598c40b302d01e8da57be79abb59d7882eecbd237842e09",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/azurerm" {
   version     = "2.57.0"
-  constraints = ">= 2.57.0"
+  constraints = "2.57.0"
   hashes = [
     "h1:ri295lvi1ZrMVo0rVS6Ew1cXUL5ta7sa6S++PibN4xE=",
     "zh:09c39d76953df6b4b2944835a8456d2127b6512c1f4d1d323b13067f002971c3",
