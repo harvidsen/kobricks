@@ -20,9 +20,9 @@ resource "databricks_cluster" "smallcluster" {
 }
 
 
-# data "databricks_current_user" "me" { }
+data "databricks_current_user" "me" { }
 
-# resource "databricks_notebook" "test" {
-#   source = "${path.module}/../notebooks/sample.py"
-#   path = "${data.databricks_current_user.me.home}/sample"
-# }
+resource "databricks_notebook" "blob" {
+  source = "${path.module}/../notebooks/blob.py"
+  path = "${data.databricks_current_user.me.home}/blob"
+}
