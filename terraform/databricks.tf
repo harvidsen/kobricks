@@ -24,5 +24,5 @@ data "databricks_current_user" "me" { }
 
 resource "databricks_notebook" "blob" {
   source = "${path.module}/../notebooks/blob.py"
-  path = "${data.databricks_current_user.me.home}/blob"
+  path = "/Shared/blob"
 }
